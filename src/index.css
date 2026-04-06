@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Kufi Arabic', 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #232528;
+    direction: rtl;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Kufi Arabic', 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #d7bc6d;
+    border-radius: 2px;
+  }
+}
