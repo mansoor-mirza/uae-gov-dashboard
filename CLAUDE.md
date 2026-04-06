@@ -49,4 +49,14 @@ Status colour pairs always come together: `uae-success`/`uae-success-bg`, `uae-w
 - Status badges use the `statusConfig` lookup pattern (object keyed by status string → `{ label, className }`) — follow this pattern when adding new status types.
 - `ServiceCard` and `StatCard` accept all data as props; data lives in the page (`src/pages/Dashboard.tsx`), not in the components.
 
-**Commit style:** `type: description` — types used are `chore`, `design`, `feat`, `fix`. Keep the body factual (what changed and why), no bullet padding.
+## Git workflow
+
+After completing every meaningful unit of work — a new component, a bug fix, a design change, a config update — commit and push immediately. Never leave work uncommitted at the end of a session.
+
+```bash
+git add <files>
+git commit -m "type: short description"
+gh auth token | git -c credential.helper='!f() { echo "username=x-access-token"; echo "password=$(gh auth token)"; }; f' push origin main
+```
+
+**Commit style:** `type: description` — types used are `chore`, `design`, `feat`, `fix`. Keep the body factual (what changed and why), no bullet padding. Each commit should represent one logical change so the history is easy to read and any state can be restored.
